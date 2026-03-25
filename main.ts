@@ -241,9 +241,6 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
         mySprite.ay += 500
     }
 })
-info.onLifeZero(function () {
-	
-})
 let mySprite: Sprite = null
 let mySprite2: Sprite = null
 info.setLife(5)
@@ -547,7 +544,8 @@ forever(function () {
 })
 forever(function () {
     if (info.life() == 0) {
-        game.showLongText("(Natalia y Ashley, si es muy dificil avisadme y lo acabo)", DialogLayout.Bottom)
+        game.showLongText("GAME OVER", DialogLayout.Bottom)
+        game.gameOver(false)
         mySprite.setPosition(80, 740)
         info.setLife(5)
     }
